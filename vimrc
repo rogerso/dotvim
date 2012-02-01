@@ -11,36 +11,43 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
     colorscheme solarized
 endif
 
+" required for powerline
 set nocompatible
 set laststatus=2
 set encoding=utf-8
 
-set number
-set showcmd
-set showmode
-set title
+set ignorecase  " case-insensitive matching
+set smartcase   " smart case matching
+set incsearch   " incremental search
 
-set noswapfile
-set nobackup
-set nowb
+set number      " show linenumbers
+set showcmd     " show partial command in status line
+set showmode    " show current mode
+set title       " change xterm titlebar as well
+
+set noswapfile  " don't create swapfile
+set nobackup    " don't create backups
 
 set autoindent
 set smartindent
 
+" I like my tabs like this
 set smarttab
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set expandtab
 
-filetype plugin on
-filetype indent on
-
+" start scrolling near margins
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
 
+set modeline    " I know this is a security hole, but what the hell
+
 if has('autocmd')
+    filetype plugin on
+    filetype indent on
     autocmd Filetype c,cpp,java,objc,cuda set cin
 endif
 if has('eval')
@@ -48,6 +55,8 @@ if has('eval')
     let c_space_errors=1
 endif
 
+" convienient function for toggling both
+" stolen from http://stackoverflow.com/questions/6624043/
 function! ToggleNERDTreeAndTagbar()
     let w:jumpbacktohere = 1
 
