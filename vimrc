@@ -15,6 +15,14 @@ endif
 " make trailing whitespace obvious
 "highlight TrailWhitespace ctermbg=red guibg=red
 "match TrailWhitespace /\s\+$\| \+\ze\t/
+"
+" stupid OS X doesn't have exuberate-ctags as /usr/bin/ctags
+if has('unix')
+    let s:uname = system('echo -n "$(uname)"')
+    if !v:shell_error && s:uname == 'Darwin'
+        let g:tagbar_ctags_bin = '/usr/local/bin/ctags'
+    endif
+endif
 
 " required for powerline
 set nocompatible
