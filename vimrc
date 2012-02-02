@@ -7,9 +7,14 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
     " term has 256 colors
     set t_Co=256
     let g:solarized_termcolors=256
+    let g:solarized_hitrail=1
     let g:Powerline_symbols='unicode'
     colorscheme solarized
 endif
+
+" make trailing whitespace obvious
+"highlight TrailWhitespace ctermbg=red guibg=red
+"match TrailWhitespace /\s\+$\| \+\ze\t/
 
 " required for powerline
 set nocompatible
@@ -24,6 +29,7 @@ set number      " show linenumbers
 set showcmd     " show partial command in status line
 set showmode    " show current mode
 set title       " change xterm titlebar as well
+set wildmenu    " let me know what I am matching
 
 set noswapfile  " don't create swapfile
 set nobackup    " don't create backups
