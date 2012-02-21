@@ -11,6 +11,12 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
     colorscheme solarized
 endif
 
+if has('gui_macvim')
+    set guifont=Monaco:h10
+    let g:Powerline_symbols='unicode'
+    colorscheme solarized
+endif
+
 " stupid OS X doesn't have exuberate-ctags as /usr/bin/ctags
 if has('unix')
     let s:uname = system('echo -n "$(uname)"')
