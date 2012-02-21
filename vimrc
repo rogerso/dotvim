@@ -7,16 +7,25 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
     " term has 256 colors
     set t_Co=256
     let g:solarized_termcolors=256
-    let g:Powerline_symbols='unicode'
-    colorscheme solarized
+    let s:use_solarized = 1
 endif
 
 if has('gui_macvim')
     set guifont=Monaco:h10
-    let g:Powerline_symbols='unicode'
-    colorscheme solarized
+    let s:use_solarized = 1
 endif
 
+if exists('s:use_solarized')
+    let g:Powerline_symbols='unicode'
+    let g:solarized_hitrail=1
+    colorscheme solarized
+endif
+unlet! s:use_solarized
+
+" make trailing whitespace obvious
+"highlight TrailWhitespace ctermbg=red guibg=red
+"match TrailWhitespace /\s\+$\| \+\ze\t/
+"
 " stupid OS X doesn't have exuberate-ctags as /usr/bin/ctags
 if has('unix')
     let s:uname = system('echo -n "$(uname)"')
@@ -38,6 +47,7 @@ set number      " show linenumbers
 set showcmd     " show partial command in status line
 set showmode    " show current mode
 set title       " change xterm titlebar as well
+set wildmenu    " let me know what I am matching
 
 set noswapfile  " don't create swapfile
 set nobackup    " don't create backups
