@@ -9,6 +9,9 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
     let g:solarized_termcolors=256
     let s:use_solarized = 1
 endif
+if has('gui_running')
+    set guioptions-=T
+endif
 if has('gui_macvim')
     set guifont=Monaco:h10
     let s:use_solarized = 1
