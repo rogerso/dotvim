@@ -3,7 +3,7 @@ call pathogen#helptags()
 
 syntax on
 set background=dark
-if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm')
+if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm' || &term == 'screen-256color')
     " term has 256 colors
     set t_Co=256
     let g:solarized_termcolors=256
