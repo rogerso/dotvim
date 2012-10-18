@@ -11,13 +11,14 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm' || &term ==
 endif
 if has('gui_running')
     set guioptions-=T
+    set lines=999 columns=200
 endif
 if has('gui_macvim')
     set guifont=Monaco:h10
     let s:use_solarized = 1
 endif
 if has('gui_gtk2')
-    set guifont=Inconsolata\ Medium\ 10
+    set guifont=Liberation\ Mono\ Medium\ 9
     let s:use_solarized = 1
 endif
 if exists('s:use_solarized')
