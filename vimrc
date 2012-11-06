@@ -85,6 +85,10 @@ if has('eval')
     let c_space_errors=1
 endif
 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['java'] }
+
 " convienient function for toggling both
 " stolen from http://stackoverflow.com/questions/6624043/
 function! ToggleNERDTreeAndTagbar()
