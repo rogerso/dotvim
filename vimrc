@@ -125,3 +125,8 @@ function! ToggleNERDTreeAndTagbar()
     endfor
 endfunction
 nmap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
+
+" Added by android-vim:
+set tags+=/home/spacehunt/.vim/tags
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let g:SuperTabDefaultCompletionType = 'context'
