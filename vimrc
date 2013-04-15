@@ -11,13 +11,14 @@ if has('terminfo') && (&term == 'xterm-256color' || &term == 'xterm' || &term ==
 endif
 if has('gui_running')
     set guioptions-=T
+    set lines=999 columns=200
 endif
 if has('gui_macvim')
     set guifont=Monaco:h10
     let s:use_solarized = 1
 endif
 if has('gui_gtk2')
-    set guifont=Inconsolata\ Medium\ 10
+    set guifont=Liberation\ Mono\ Medium\ 9
     let s:use_solarized = 1
 endif
 if exists('s:use_solarized')
@@ -84,6 +85,10 @@ if has('eval')
     let c_space_errors=1
 endif
 
+let g:syntastic_mode_map = { 'mode': 'active',
+                           \ 'active_filetypes': [],
+                           \ 'passive_filetypes': ['java'] }
+
 " convienient function for toggling both
 " stolen from http://stackoverflow.com/questions/6624043/
 function! ToggleNERDTreeAndTagbar()
@@ -120,3 +125,8 @@ function! ToggleNERDTreeAndTagbar()
     endfor
 endfunction
 nmap <leader>\ :call ToggleNERDTreeAndTagbar()<CR>
+
+" Added by android-vim:
+set tags+=/home/spacehunt/.vim/tags
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let g:SuperTabDefaultCompletionType = 'context'
