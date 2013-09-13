@@ -22,9 +22,17 @@ if has('gui_gtk2')
     let s:use_solarized = 1
 endif
 if exists('s:use_solarized')
-    let g:Powerline_symbols='unicode'
     let g:solarized_hitrail=1
     colorscheme solarized
+
+    let g:airline_theme='dark'
+    let g:airline_symbols = {}
+    let g:airline_left_sep = '▶'
+    let g:airline_right_sep = '◀'
+    let g:airline_symbols.linenr = '¶'
+    let g:airline_symbols.branch = '⎇'
+    let g:airline_symbols.paste = 'ρ'
+    let g:airline_symbols.whitespace = 'Ξ'
 endif
 unlet! s:use_solarized
 
