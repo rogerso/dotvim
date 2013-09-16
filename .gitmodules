@@ -33,4 +33,4 @@
 	url = git://github.com/vim-scripts/javacomplete.git
 [submodule "bundle/vim-airline"]
 	path = bundle/vim-airline
-	url = https://github.com/bling/vim-airline
+	url = https://github.com/bling/vim-airline.git
