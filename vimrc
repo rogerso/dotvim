@@ -79,6 +79,7 @@ if has('autocmd')
     filetype plugin on
     filetype indent on
     autocmd Filetype c,cpp,java,objc,cuda set cin
+    autocmd Filetype go set noexpandtab tabstop=8 shiftwidth=8 softtabstop=8
 endif
 if has('eval')
     let c_gnu=1
