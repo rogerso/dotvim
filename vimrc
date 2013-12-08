@@ -25,6 +25,7 @@ if exists('s:use_solarized')
     let g:solarized_hitrail=1
     colorscheme solarized
 
+    let g:airline_theme='dark'
     let g:airline_symbols = {}
     let g:airline_left_sep = '▶'
     let g:airline_right_sep = '◀'
