@@ -94,7 +94,7 @@ if has('eval')
     let c_space_errors=1
 endif
 
-let g:syntastic_mode_map = { 'mode': 'active',
+let g:syntastic_mode_map = { 'mode': 'passive',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['java'] }
 
